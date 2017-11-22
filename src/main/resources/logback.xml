@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="300 seconds">
+  <appender name="__STDOUT__" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{26} [[%X{session}]] [[%X{utilisateur}]] %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="__FILE__" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<!--     <file>=${catalina.base}/logs/cerbere-demo-4.4.0.log</file> -->
+    <file>=D:/Donnees/eclipse/eclipseworkspace_neon/cerbere_maven/logs/cerbere-demo-4.5.0.log</file>
+    <encoder >
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{26} [[%X{session}]] [[%X{utilisateur}]] %msg%n</Pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+<!--       <fileNamePattern>=${catalina.base}/logs/cerbere-demo-4.4.0.%d{yyyyMMdd}.log</fileNamePattern> -->
+      <fileNamePattern>=D:/Donnees/eclipse/eclipseworkspace_neon/cerbere_maven/logs/cerbere-demo-4.5.0.%d{yyyyMMdd}.log</fileNamePattern>
+    </rollingPolicy>
+  </appender>
+
+  <root level="warn">
+    <appender-ref ref="__FILE__" />
+  </root>
+  <logger name="cerbere" level="debug">
+    <appender-ref ref="__FILE__" />
+  </logger>
+  <logger name="i2" level="debug">
+    <appender-ref ref="__FILE__" />
+  </logger>
+</configuration>

@@ -1,0 +1,132 @@
+<%-- Fichier ne servant qu'à FACTORISER LA PARTIE RELATIVE AUX 
+INFORMATIONS SUR LA REQUETE --%>
+
+<%-- A INCLURE DANS LES JSP MERE avec la DIRECTIVE : 
+@ include file="/WEB-INF/vues/infosrequete.jspf"  --%>
+
+<%-- L'inclusion est effectuée à la compilation de la JSP MERE. --%>
+<%-- Cela équivaut à copier-coller le code de la PRESENTE JSP FILLE
+dans la JSP MERE l'incluant --%>
+<%-- Une unique Servlet est générée à partir des deux jsp. --%>
+<%-- Les variables déclarées dans des scriptlets de la JSP MERE 
+sont accessibles dans la présente JSP FILLE. 
+IL NE FAUT PAS LES DECLARER DEUX FOIS.  --%>
+<%-- Les directives comme @page de la PRESENTE JSP FILLE 
+NE DOIVENT PAS CONTREDIRE CELLES DE LA JSP MERE. 
+Je ne les mets que pour affirmer l'encodage en UTF-8 --%>
+<%-- La PRESENTE JSP FILLE n'étant pas compilée de façon standalone, 
+elle n'a pas forcément l'extension jsp. 
+Il est RECOMMANDE DE DONNER L'EXTENSION jspf pour JSP Fragment--%>
+
+<%--================================================================--%>
+<%-- 						DIRECTIVE PAGE						   	--%>
+<%-- 				Conforme au XML	(jsp:directive.page)			--%>
+<%-- DECLARATION DE Java. 											--%>
+<%-- 'language="java"' signifie que cette jsp peut contenir du java.--%>
+<%-- 'contentType="text/html; charset=UTF-8"' signifie que la jsp 	--%>
+<%-- contiendra des balises HTML en UTF-8.  						--%>
+<%-- 'pageEncoding="UTF-8"' signifie que l'encodage 				--%>
+<%-- de la présente page est en UTF-8. 								--%>
+<%-- isErrorPage="false" signifie que la présente jsp n'est pas une --%>
+<%-- page d'erreur.												    --%>
+<%-- 'errorPage="/WEB-INF/jsp/commun/erreur.jsp"'	 				--%>
+<%-- localise la page d'erreurs ET GENERE UN OBJET "exception".    	--%>
+<%-- session="true" signifie que la présente jsp aura accès aux    	--%>
+<%-- informations de Session.								    	--%>
+<%-- isThreadSafe="true" indique que la présente jsp peut être		--%>
+<%-- employée pour des accès simultanés.							--%>
+<%-- info="..." contient le descriptif de la présente page.			--%>						    	
+<%--================================================================--%>
+<%@ page
+	language="java" 
+		contentType="text/html; charset=UTF-8"
+    		pageEncoding="UTF-8"
+    					session="true" 
+    						isThreadSafe="true" %>
+
+
+	<%--===============================================================--%>
+	<%--                   DECLARATION DE LA css                       --%>
+	<%--===============================================================--%>
+	<%-- NE PAS REDEFINIR LA css (déjà fait dans la jsp mère). --%>
+
+<%--================================================================--%>
+<%-- 					IMPORT DES TAGLIBS DE STRUTS et JSTL 		--%>
+<%-- Cette inclusion STATIQUE d'une jsp a lieu AVANT la traduction  --%>
+<%-- de la présente jsp en code Java.							    --%>
+<%--================================================================--%>           
+<%-- NE PAS IMPORTER LES TAGLIBS (déjà fait dans la jsp mère).  	--%>
+
+
+	<div>
+					
+		<h1>Informations sur la requête.</h1>
+		
+		<table border="1">
+			<tr>
+				<td>Contexte : </td>
+				<td><%= 
+				/**
+				* Contexte de la requête.<br/>
+				*/
+				request.getContextPath() %></td>
+			</tr>
+			
+			<tr>	
+				<td>URL de la requête (request.getRequestURL().toString()) : </td>
+				<td><%= request.getRequestURL().toString() %></td>
+			</tr>
+			
+			<tr>	
+				<td>URI de la requête (request.getRequestURI()) : </td>
+				<td><%= request.getRequestURI() %></td>
+			</tr>
+			
+			<tr>	
+				<td>QueryString de la requête (request.getQueryString()) : </td>
+				<td><%= request.getQueryString() %></td>
+			</tr>
+			
+			<tr>	
+				<td>Protocole de la requête (request.getProtocol()) : </td>
+				<td><%= request.getProtocol() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Encodage de la requête (request.getCharacterEncoding()) : </td>
+				<td><%= request.getCharacterEncoding() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Méthode de la requête (request.getMethod()) : </td>
+				<td><%= request.getMethod() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Adresse IP du serveur (request.getRemoteAddr()) : </td>
+				<td><%= request.getRemoteAddr() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Nom du serveur (request.getRemoteHost()) : </td>
+				<td><%= request.getRemoteHost() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Nom du serveur (request.getServerName()) : </td>
+				<td><%= request.getServerName() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Port du Serveur écoutant la requête (request.getServerPort()) : </td>
+				<td><%= request.getServerPort() %></td>				
+			</tr>
+			
+			<tr>	
+				<td>Path de la Servlet (request.getServletPath()) : </td>
+				<td><%= request.getServletPath() %></td>				
+			</tr>
+			
+		</table>
+							
+	</div>

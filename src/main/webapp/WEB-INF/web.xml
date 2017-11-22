@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================= 	-->
+<!-- VERSION DE SERVLET API 3.1.0                                   -->
+<!-- Doit correspondre avec Dynamic Web Module 3.1 dans Eclipse 	-->
+<!-- http://crunchify.com/ever-wondered-difference-between-dynamic-web-module-3-0-and-3-1-how-to-setup-3-1-correct-way-in-eclipse/ -->
+<!-- ============================================================= 	-->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:web="http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+  
+  	<!-- ========================================================== -->
+    <!-- 							General 						-->
+    <!-- ========================================================== --> 					
+	<display-name>cerbere</display-name>
+	<description>Application de test de Cerbere</description>
+	<!-- Set timeout to 120 minutes -->
+    <session-config>
+            <session-timeout>120</session-timeout>
+    </session-config>
+  
+
+	<!-- ========================================================== -->
+    <!-- CONTEXT PARAMETERS (Paramètres valables pour 
+    toutes les Servlets de l'application)							-->
+    <!-- ========================================================== -->
+    <context-param>
+            <description>Mode développement ou pas.</description>
+            <param-name>mode.dev</param-name>
+            <param-value>1</param-value>
+    </context-param> 
+					<!-- ============================== -->
+					<!-- 	PROPERTIES (ResourceBundle) -->
+					<!-- ============================== -->
+	<!-- Define the basename for a resource bundle for I18N -->	
+	<!-- (contenu dans dans jstl-1.2.jar) -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<!-- va rechercher application_fr_FR.properties sous src (racine du contexte) -->
+		<param-value>application</param-value>
+	</context-param>
+ 
+ 
+ 
+									<!-- ================= -->
+									<!-- 	FILTRES -->
+									<!-- ================= -->
+	
+ 
+<!-- ================= -->
+<!-- FILTRE D'ENCODAGE -->
+<!-- ================= -->	
+	<!--  	filtre dédié à l'encodage qui forcera le serveur d'applications 
+	web à lire les paramètres des requêtes dans l'encodage voulu (UTF-8) 
+	et à renvoyer ces réponses également dans ce même encodage. -->			
+	<filter>
+		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<filter-class>
+			levy.daniel.commun.util.filtre.SetCharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+	<filter-name>SetCharacterEncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+<!-- ================== -->
+<!-- FILTRE CERBERE		-->
+<!-- ================== -->	    
+    <!-- déclaration du filtre Cerbère 	-->
+    <!-- (dans cerbere-bouchon-4.0.jar) -->
+	<filter>
+		<filter-name>FiltreCerbere</filter-name>
+		<filter-class>i2.application.cerbere.filtre.FiltreCerbere</filter-class>
+		
+		<!-- ============================================================= -->
+        <!-- *** OBLIGATOIRE***  : identifiant de l'application 
+        	tel que l'attribut "applicationId" dans le fichier de 
+        	configuration XML du Cerbere Bouchon
+              "cerbere-filtre.xml"
+         -->
+        <!-- ============================================================= -->
+        <init-param>
+            <param-name>applicationId</param-name>
+            <param-value>cerbere</param-value>
+        </init-param> 
+        
+        <!-- Facultatif : chemin du fichier de configuration XML.
+             Si absent, recherche de cerbere-filtre.xml sous WEB-INF puis dans
+             le classpath.
+        -->
+        <init-param>
+            <param-name>conf</param-name>
+            <param-value>cerbere-filtre.xml</param-value>
+        </init-param>
+        
+        <!-- Facultatif : URL retournée par Cerbere pour 
+        entrer dans l'application -->
+        <init-param>
+        	<param-name>applicationEntree</param-name>
+        	<param-value>/accueil.do</param-value>
+        </init-param>
+        
+        <!-- Facultatif : niveau de traces du filtre (défaut : ERROR) 
+             Valeurs possibles : DEV -> DEBUG -> INFO -> CONFIG -> ERROR
+        -->
+        <init-param>
+            <param-name>log.niveau</param-name>
+            <param-value>info</param-value>
+        </init-param>
+        
+        <!-- Facultatif : emplacement des traces (défaut : sortie standard) 
+             Valeurs possibles : nom de fichier ou "stdout"
+        -->
+        <init-param>
+            <param-name>log.fichiers</param-name>
+            <param-value>stdout</param-value>
+        </init-param>
+        
+        <!-- Facultatif : URLs non securisees --> 
+        <!-- Ces URL ne seront pas filtrées par Cerbere. -->
+		<init-param>
+			<param-name>
+				urls-ouvertes
+			</param-name>
+			<param-value>
+				/index.html;*.html;accueil.jsp;
+				/accessibilite.do;/plan.do;
+				/aide/aidegenerale.html;
+				/couleurs.do;
+				/erreur403.do;/403.do;
+				/erreur404.do;/404.do;
+				/erreur500.do;/505.do
+				/generererreur.do;
+				re:i:#MEDIA_RE;
+			</param-value>
+		</init-param>
+		
+    </filter>
+   
+    <!-- association du filtre aux URL -->
+    <!-- avec /*, toutes les requêtes sont 
+    interceptées par le filtre CERBERE -->
+	<filter-mapping>
+		<filter-name>FiltreCerbere</filter-name>
+ 		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+
+					<!-- ==================== -->
+					<!-- SERVLETS CONTROLEURS -->
+					<!-- ==================== -->	
+
+<!-- ==========================================   -->
+<!-- SERVLET default permettant de laisser passer -->
+<!-- certains types de requêtes sur les ressources--> 
+<!-- statiques (demandes de css, ...) 			  -->
+<!-- ATTENTION ! : servlet-name doit 			  -->
+<!-- contenir 'default' 						  -->
+<!-- Pointe dans le serveur Tomcat sur 			  -->
+<!-- org.apache.catalina.servlets.DefaultServlet  -->
+<!-- ==========================================   -->		
+	<servlet-mapping>
+       <servlet-name>default</servlet-name>
+       <url-pattern>/</url-pattern>
+   </servlet-mapping>
+
+
+
+<!-- ==================== -->
+<!-- SERVLETS CONTROLEURS -->
+<!-- ==================== -->	    
+	<servlet>	
+		<servlet-name>AuthentificationServlet</servlet-name>
+		<servlet-class>levy.daniel.application.metier.authentification.AuthentificationServlet</servlet-class>
+		<!-- Charge la Servlet dès le démarrage de 
+        l'application dans l'ordre indiqué dans la balise  load-on-startup
+        (call the init() method of the servlet) --> 
+        <load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<!-- association de la Servlet aux URL -->
+    <!-- avec "/" dans url-pattern, toutes les requêtes seraient 
+    traitées par la Servlet 
+    levy.daniel.application.metier.authentification.AuthentificationServlet -->
+    <!-- avec "/accueil.do" dans url-pattern, seule la requête /accueil.do 
+    fabriquée par le filtre Cerbere sera traitée par la Servlet 
+    levy.daniel.application.metier.authentification.AuthentificationServlet -->
+	<servlet-mapping>
+		<servlet-name>AuthentificationServlet</servlet-name>
+		<url-pattern>/accueil.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- //////////////////// EXEMPLES DE MAPPINGS //////////////////// -->
+    <!-- RAPPEL : '/' au début de l'URL signifie SOUS LE CONTEXTE 
+    comme '/cerbere' dans 'serveur/cerbere/' -->
+    <!-- par exemple (http://localhost:8080/cerbere/) -->
+    
+    <!-- url-pattern = '/servlet/SimpleServlet' matche avec l'URL '/servlet/SimpleServlet' -->
+    <!-- url-pattern = '/status/*' matche avec l'URL '/status/synopsis' -->
+    <!-- url-pattern = '/status/*' matche avec l'URL '/status/complete?date=today' -->
+    <!-- url-pattern = '/status/*' matche avec l'URL '/status' -->
+    <!-- url-pattern = '/status/*' NE matche PAS avec l'URL '/server/status' 
+    ('server' est intercalé entre le contexte et status)-->
+    
+    <!-- url-pattern = '*.map' matche avec l'URL '/US/Oregon/Portland.map' -->
+    <!-- url-pattern = '*.map' matche avec l'URL '/US/Washington/Seattle.map' -->
+    <!-- url-pattern = '*.map' matche avec l'URL '/Paris.France.map' -->
+    <!-- url-pattern = '*.map' NE matche PAS avec l'URL '/US/Oregon/Portland.MAP' 
+    (l'extension est en majuscules) -->
+    <!-- url-pattern = '*.map' NE matche PAS avec l'URL '/interface/description/mail.mapi' 
+    (l'extension map ne vaut pas map) -->
+    
+    <!-- ////////////////////////// REGLES ////////////////////////////// -->
+    <!-- NE PAS METTRE 2 url-patterns IDENTIQUES POUR 
+    2 Servlets DIFFERENTES DANS LE MEME web.xml -->
+    
+    <!-- UNE Servlet PEUT AVOIR PLUSIEURS servlet-mapping 
+    et donc répondre à plusieurs types d'URL -->
+    
+    <!-- MODE DE DETERMINATION DE LA SERVLET 
+    Lorsqu'une requête matche avec plusieurs servlet-mapping. 4 règles 
+    classées par ordre de priorité décroissante : -->
+    
+    <!-- 1 __ "exact path match over a wildcard path match". 
+    Le chemin le plus complet matchant sera toujours 
+    préféré au chemin avec joker matchant -->
+    
+    <!-- 2 __  "the container prefers to match the longest pattern". 
+    Tomcat préfèrera toujours le chemin le plus long (plus précis) -->
+    
+    <!-- 3 __  "the container prefers path matches over filetype matches". -->
+    
+    <!-- 4 __ "'/' always matches any request that no other pattern matches". 
+    le url-pattern '/' permet toujours de récupérer toutes les requêtes
+    dont les autres patterns n'ont pas voulu. -->
+
+
+    <servlet>
+        <servlet-name>ActionCtl</servlet-name>
+        <servlet-class>cerbere.demo.ActionServlet</servlet-class>
+        <!-- Charge la Servlet dès le démarrage de 
+        l'application dans l'ordre indiqué dans la balise  load-on-startup
+        (call the init() method of the servlet) --> 
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    
+    <!-- association de la Servlet aux URL -->
+    <!-- avec '*.action' dans url-pattern, toutes les requêtes 
+    finissant par ".action" 
+    et seulement celles-là sont traitées par la Servlet 
+    cerbere.demo.ActionServlet -->
+    <servlet-mapping>
+        <servlet-name>ActionCtl</servlet-name>
+        <url-pattern>*.action</url-pattern>
+    </servlet-mapping>
+    
+    
+    	
+
+		<!-- ========================================================== -->
+        <!-- Listeners -->
+        <!-- ========================================================== -->
+
+        <!-- Define example application events listeners --> 
+        
+
+        
+		<!-- ========================================================== -->
+        <!-- Security -->
+        <!-- ========================================================== -->
+
+        <!-- Define roles --> 
+        
+                
+        
+		<!-- ========================================================== -->
+        <!-- Error Handler -->
+        <!-- ========================================================== -->
+
+        <!-- Define an error handler for 404 pages -->
+<!--         <error-page> -->
+<!--                 <error-code>404</error-code> -->
+<!--                 <location>/WEB-INF/jsp/commun/erreur.jsp</location> -->
+<!--         </error-page> -->
+
+        <!-- Define an error handler for java.lang.Throwable -->
+        <error-page>
+                <exception-type>java.lang.Throwable</exception-type>
+                <location>/WEB-INF/jsp/commun/erreur.jsp</location>
+        </error-page> 
+
+
+		<!-- ========================================================== -->
+        <!-- Extra MIME types -->
+        <!-- ========================================================== -->
+
+        <!-- Set XML mime-mapping so spreadsheets open properly 
+        instead of being sent as an octet/stream -->
+        <mime-mapping>
+                <extension>xls</extension>
+                <mime-type>application/vnd.ms-excel</mime-type>
+        </mime-mapping>
+
+
+        <!-- ========================================================== -->
+        <!-- Locale -->
+        <!-- ========================================================== -->
+
+        <!-- Set Locale Encoding -->
+        <locale-encoding-mapping-list>
+                <locale-encoding-mapping>
+                        <locale>fr-FR</locale>
+                        <encoding>UTF-8</encoding>
+                </locale-encoding-mapping>
+        </locale-encoding-mapping-list>
+
+
+
+							<!-- =============================	 -->
+							<!-- 	Libraire de TAGS Utilisées 	 -->
+							<!-- =============================	 -->
+		
+        <!-- Taglib declarations are no longer required since JSP 2.0 -->
+        <!-- The <taglib> did not need to be a child of <jsp-config> 
+        in earlier versions but is required as of Tomcat 7 -->
+        <!-- Note that you can only have one <jsp-config> 
+        element per web.xml -->
+        
+ <jsp-config>
+   <taglib>
+            <taglib-uri>/WEB-INF/tld/struts-bean.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/struts-bean.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/struts-html.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/struts-logic.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/struts-logic.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/struts-nested.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/struts-nested.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/struts-tiles.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/struts-tiles.tld</taglib-location>
+        </taglib>
+     <taglib>
+            <taglib-uri>/WEB-INF/tld/c.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/fmt.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/fn.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fn.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/x.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/x.tld</taglib-location>
+        </taglib>
+   </jsp-config>  
+
+
+	
+	<!-- ==================================================== -->
+	<!--                      SPRING                          -->
+	<!-- ==================================================== -->
+	<!-- variable de contexte contextConfigLocation pointant  --> 
+	<!-- sur /WEB-INF/applicationContext.xml 				  -->
+	<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+
+
+	<!-- CHARGEMENT DE LA CONFIGURATION DE SPRING							 -->
+	<!-- Le listener ContextLoaderListener charge la configuration Spring	 -->
+	<!-- à partir de la variable de contexte contextConfigLocation 			 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    
+    <!-- DECLARE LE CONTROLLER UNIQUE MVC2 de SPRING (DispatcherServlet)			-->
+    <!-- Declaration de la servlet DispatcherServlet de Spring et de son mapping 	-->
+    <!-- DispatcherServlet est le Controller UNIQUE MVC2 de SPRING. 				-->
+    <!-- ApplicationContext redirige les requêtes HTTP vers les contrôleurs voulus 	-->
+    <!-- ApplicationContext est équivalente à la « ActionServlet » de Struts). 		--> 
+    <servlet>
+        <servlet-name>servlet-application-context</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- Précise que le Controller unique MVC2 DispatcherServlet de SPRING 	 -->
+    <!-- interceptera toutes les actions (URL) préfixées par /app.			 -->
+    <servlet-mapping>
+        <servlet-name>servlet-application-context</servlet-name>
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
+ 
+
+
+
+	
+									<!-- ================= -->
+									<!-- 	WELCOME FILES -->
+									<!-- ================= -->   
+										
+  <welcome-file-list>
+  	<welcome-file>pointentree.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>

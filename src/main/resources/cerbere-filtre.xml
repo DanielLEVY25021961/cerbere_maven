@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<annuaire xmlns="http://cerbere.application.i2/schemas/CerbereBouchonSchema/2"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cerbere.application.i2/schemas/CerbereBouchonSchema/2 referentiel.xsd">
+
+    <!-- L I S T E  D E S  S E R V I C E S ,  E N T R E P R I S E S  E T 
+        U T I L I S A T E U R S  D U  S Y S T E M E -->
+    <entites racine="fr">
+        <entite nom="equipement">
+            <entite nom="AC">
+            
+                <entite nom="SG" estUnService="1">
+                    <entite nom="A">
+                        <entite nom="A1">
+                            <utilisateurs>
+                                <utilisateur mel="alain.martin-sg@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Martin-Sg</nom>
+                                    <prenom>Alain</prenom>
+                                    <identifiant>alain.martin-sg</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000001</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                        <entite nom="A2">
+                            <utilisateurs>
+                                <utilisateur mel="sophie.dupond-sg@developpement-durable.gouv.fr">
+                                    <civilite>F</civilite>
+                                    <nom>Dupond-Sg</nom>
+                                    <prenom>Sophie</prenom>
+                                    <identifiant>sophie.dupond-sg</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000002</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                    <entite nom="B">
+                        <entite nom="B1">
+                            <utilisateurs>
+                                <utilisateur mel="marc.durand-sg@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Durand-Sg</nom>
+                                    <prenom>Marc</prenom>
+                                    <identifiant>marc.durand-sg</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000003</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                </entite>
+                          
+            </entite>
+            
+            <entite nom="DR">
+                <entite nom="DREAL Alsace" estUnService="1">
+                    <entite nom="A">
+                        <entite nom="A1">
+                            <utilisateurs>
+                                <utilisateur mel="alain.martin-alsace@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Martin-Alsace</nom>
+                                    <prenom>Alain</prenom>
+                                    <identifiant>alain.martin-alsace</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000004</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                </entite>
+                <entite nom="DREAL Aquitaine" estUnService="1">
+                    <entite nom="A">
+                        <entite nom="A1">
+                            <utilisateurs>
+                                <utilisateur mel="sophie.dupond-aquitaine@developpement-durable.gouv.fr">
+                                    <civilite>F</civilite>
+                                    <nom>Dupond-Aquitaine</nom>
+                                    <prenom>Sophie</prenom>
+                                    <identifiant>sophie.dupond-aquitaine</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000008</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                </entite>
+            </entite>
+            
+            <entite nom="DDEA">
+                <entite nom="DDT 01" estUnService="1">
+                    <entite nom="A">
+                        <entite nom="A1">
+                            <utilisateurs>
+                                <utilisateur mel="alain.martin-ain@equipement-agriculture.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Martin-Ain</nom>
+                                    <prenom>Alain</prenom>
+                                    <identifiant>alain.martin-ain</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000010</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                </entite>
+                
+                <entite nom="DDT 02" estUnService="1">
+                    <entite nom="A">
+                        <entite nom="A1">
+                            <utilisateurs>
+                                <utilisateur mel="sophie.dupond-aisne@equipement-agriculture.gouv.fr">
+                                    <civilite>F</civilite>
+                                    <nom>Dupond-Aisne</nom>
+                                    <prenom>Sophie</prenom>
+                                    <identifiant>sophie.dupond-aisne</identifiant>
+                                    <passe>bouchon</passe>
+                                    <matricule>EQUTRH000000014</matricule>
+                                    <tel>+33 111111111</tel>
+                                    <mobile>+33 666666666</mobile>
+                                    <fax>+33 122222222</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                    </entite>
+                </entite>
+            </entite>
+            
+            <!-- ============================ -->
+            <!-- Services Techniques Centraux -->
+            <!-- ============================ -->
+            
+            <entite nom="STC" >
+            	
+            	<!-- ===== -->
+            	<!-- SETRA -->
+                <entite nom="Setra" estUnService="1">
+                
+                	<!-- ====== -->
+            		<!-- CITS 	-->
+                	<entite nom="CITS" >
+                	
+                		<!-- DRD -->
+                    	<entite nom="DRD">                       
+                            <utilisateurs>
+                                <utilisateur mel="dany.levy@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Lévy</nom>
+                                    <prenom>Daniel</prenom>
+                                    <identifiant>dany.levy</identifiant>
+                                    <passe>admin</passe>
+                                    <matricule>LEVY000000010</matricule>
+                                    <tel>+33 160523032</tel>
+                                    <mobile>+33 6384395798</mobile>
+                                    <fax>+33 160528132</fax>
+                                </utilisateur>
+                                <utilisateur mel="admin@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Admin</nom>
+                                    <prenom>Admin</prenom>
+                                    <identifiant>admin</identifiant>
+                                    <passe>admin</passe>
+                                    <matricule>ADMIN000000010</matricule>
+                                    <tel>+33 160523032</tel>
+                                    <mobile>+33 6384395798</mobile>
+                                    <fax>+33 160528132</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                        
+                        <!-- DAMO -->
+                        <entite nom="DAMO">                       
+                            <utilisateurs>
+                                <utilisateur mel="Christine.barthe@developpement-durable.gouv.fr">
+                                    <civilite>F</civilite>
+                                    <nom>Barthe</nom>
+                                    <prenom>christine</prenom>
+                                    <identifiant>christine.barthe</identifiant>
+                                    <passe>admin</passe>
+                                    <matricule>BARTHE000000010</matricule>
+                                    <tel>+33 160523032</tel>
+                                    <mobile>+33 6384395798</mobile>
+                                    <fax>+33 160528132</fax>
+                                </utilisateur>
+                            </utilisateurs>
+                        </entite>
+                                                      
+                    </entite>
+                    
+                    <!-- ====== -->
+            		<!-- CSTM 	-->
+                	<entite nom="CSTM" >
+                	
+                		<!-- DCST -->
+                    	<entite nom="DCST">                       
+                            <utilisateurs>
+                            
+                                <utilisateur mel="frederic.farina@developpement-durable.gouv.fr">
+                                    <civilite>M</civilite>
+                                    <nom>Farina</nom>
+                                    <prenom>Frederic</prenom>
+                                    <identifiant>frederic.farina</identifiant>
+                                    <passe>admin</passe>
+                                    <matricule>FARINA000000010</matricule>
+                                    <tel>+33 160523032</tel>
+                                    <mobile>+33 6384395798</mobile>
+                                    <fax>+33 160528132</fax>
+                                </utilisateur>
+                                
+                            </utilisateurs>
+                            
+                        </entite>
+                                         
+                    </entite>
+                    
+                </entite>
+                
+            </entite>
+
+            
+            <!-- ============================ -->
+            <!-- 			DIR 			  -->
+            <!-- ============================ -->
+            <entite nom="DIR">
+            
+                <entite nom="DIRA">
+                
+                	<entite nom="SIEER" estUnService="1">
+                    	                
+                    </entite>
+                    
+                </entite>
+                
+                <entite nom="DIRE">
+                
+                	<entite nom="SPR" estUnService="1">
+                    	<entite nom="CESR">                       
+                            
+                        </entite>                       
+                    </entite>
+                    
+                </entite>
+                
+            </entite>
+            
+        </entite>
+        
+        
+        <entite nom="Externes">
+            <entite nom="Particuliers" estUnService="1">
+                <utilisateurs>
+                    <utilisateur mel="alain.martin-part@martin-part.com" estVerifie="0">
+                        <civilite>M</civilite>
+                        <nom>Martin-Part</nom>
+                        <prenom>Alain</prenom>
+                        <identifiant>alain.martin-part@martin-part.com</identifiant>
+                        <passe>bouchon</passe>
+                        <adresse>
+                            <rue>10 rue des pins</rue>
+                            <codepostal>33000</codepostal>
+                            <ville>Bordeaux</ville>
+                            <pays>FR</pays>
+                        </adresse>
+                    </utilisateur>
+                </utilisateurs>
+            </entite>
+            <entite nom="Professionnels Francais ">
+                <entite nom="SOC NAT DES CHEMINS DE FER FRANCAIS " SIREN="552049447" estUnService="1">
+                    <adresse>
+                        <rue>34 RUE DU CDT RENE MOUCHOTTE</rue>
+                        <codepostal>75014 PARIS 14</codepostal>
+                        <ville>PARIS 14</ville>
+                        <pays>FR</pays>
+                    </adresse>
+                    <utilisateurs>
+                        <utilisateur mel="sophie.dupond-sncf@sncf.com">
+                            <civilite>F</civilite>
+                            <nom>Dupond-Sncf</nom>
+                            <prenom>Sophie</prenom>
+                            <identifiant>sophie.dupond-sncf@sncf.com</identifiant>
+                            <passe>bouchon</passe>
+                        </utilisateur>
+                    </utilisateurs>
+                </entite>
+            </entite>
+        </entite>
+    </entites>
+    
+    <!-- L I S T E  D E S  A P P L I C A T I O N S  E T  D E  L E U R S
+        P R O F I L S -->
+    <applications>
+    
+		<application applicationId="cerbere-demo">
+			<profils-app>
+				<profil-app nom="ADMINISTRATEUR" />
+				<profil-app nom="GESTIONNAIRE" />
+				<profil-app nom="LECTEUR" />
+				<profil-app nom="DEVELOPPEUR" />
+				<profil-app nom="UTILISATEUR" />
+			</profils-app>
+		</application>
+		
+		<application applicationId="cerbere">
+			<profils-app>
+				<profil-app nom="ADMINISTRATEUR" />
+				<profil-app nom="GESTIONNAIRE" />
+				<profil-app nom="LECTEUR" />
+				<profil-app nom="UTILISATEUR" />
+			</profils-app>
+		</application>
+		
+	</applications>
+    
+    <!-- L I S T E  D E S  D R O I T S  S U R  L'A P P L I C A T I O N
+        Les droits sont affectés par utilisateur. Chaque utilisateur est
+        identifié de façon unique par son mel et contient plusieurs profils.
+        Un profil est caractérisé par :
+        - son profil d'application associé [**obligatoire**]
+        - une portée de service [facultatif]
+        - une restriction libre [facultatif]
+    -->
+    
+    <!-- ============================================================== -->
+    <!--  					CERBERE-DEMO								-->
+    <!-- ============================================================== -->
+	<habilitations applicationId="cerbere-demo">
+		<habilitation mel="alain.martin-sg@developpement-durable.gouv.fr">
+			<profil nom="ADMINISTRATEUR" />
+		</habilitation>
+		<habilitation mel="sophie.dupond-aquitaine@developpement-durable.gouv.fr">
+			<profil nom="GESTIONNAIRE">
+				<portee>DREAL Aquitaine</portee>
+				<restriction>R1</restriction>
+			</profil>
+			<profil nom="GESTIONNAIRE">
+				<portee>SIREN 552049447</portee>
+				<restriction>R2</restriction>
+			</profil>
+		</habilitation>
+		<habilitation mel="sophie.dupond-sncf@sncf.com">
+			<profil nom="GESTIONNAIRE">
+				<portee>SIREN 552049447</portee>
+				<restriction>R1</restriction>
+			</profil>
+		</habilitation>
+		<habilitation mel="alain.martin-part@martin-part.com">
+			<profil nom="LECTEUR" />
+		</habilitation>
+		
+		<!-- ============================ -->
+		<!-- UTILISATEUR dany.levy, admin -->
+		<!-- ============================ -->
+		<habilitation mel="dany.levy@developpement-durable.gouv.fr">
+		
+			<!-- ADMINISTRATEUR de portée nationale sans restriction -->
+			<profil nom="ADMINISTRATEUR">
+				<portee>NATIONALE</portee>
+			</profil>
+			
+			<!-- ADMINISTRATEUR SANS PORTEE (= service) sans restriction -->
+			<profil nom="ADMINISTRATEUR">
+			</profil>
+			
+			<!-- ADMINISTRATEUR de portée nationale 
+			AVEC restriction FRANCE-->
+			<profil nom="ADMINISTRATEUR">
+				<portee>NATIONALE</portee>
+				<restriction>FRANCE</restriction>
+			</profil>
+			
+			<!-- DEVELOPPEUR de portée nationale avec restriction FRANCE -->
+			<profil nom="DEVELOPPEUR">
+				<portee>NATIONALE</portee>
+				<restriction>FRANCE</restriction>
+			</profil>
+			
+			<!-- UTILISATEUR de portée DIRA avec restriction DIR ATLANTIQUE -->
+			<profil nom="UTILISATEUR">
+				<portee>DIRA</portee>
+				<restriction>DIR ATLANTIQUE</restriction>
+			</profil>
+		</habilitation>
+		
+		<!-- ======================== -->
+		<!-- UTILISATEUR admin, admin -->
+		<!-- ======================== -->
+		<habilitation mel="admin@developpement-durable.gouv.fr">
+			<profil nom="ADMINISTRATEUR">
+			</profil>
+		</habilitation>
+	</habilitations>
+
+	<!-- ============================================================== -->
+    <!--  					CERBERE										-->
+    <!-- ============================================================== -->
+	<habilitations applicationId="cerbere">
+		<habilitation mel="alain.martin-sg@developpement-durable.gouv.fr">
+			<profil nom="ADMINISTRATEUR" />
+		</habilitation>
+		<habilitation mel="sophie.dupond-aquitaine@developpement-durable.gouv.fr">
+			<profil nom="GESTIONNAIRE">
+				<portee>DREAL Aquitaine</portee>
+				<restriction>R1</restriction>
+			</profil>
+			<profil nom="GESTIONNAIRE">
+				<portee>SIREN 552049447</portee>
+				<restriction>R2</restriction>
+			</profil>
+		</habilitation>
+		<habilitation mel="sophie.dupond-sncf@sncf.com">
+			<profil nom="GESTIONNAIRE">
+				<portee>SIREN 552049447</portee>
+				<restriction>R1</restriction>
+			</profil>
+		</habilitation>
+		<habilitation mel="alain.martin-part@martin-part.com">
+			<profil nom="LECTEUR" />
+		</habilitation>
+		
+		<!-- ============================ -->
+		<!-- UTILISATEUR dany.levy, admin -->
+		<!-- ============================ -->
+		<habilitation mel="dany.levy@developpement-durable.gouv.fr">
+		
+			<!-- ADMINISTRATEUR de portée nationale sans restriction -->
+			<profil nom="ADMINISTRATEUR">
+				<portee>NATIONALE</portee>
+			</profil>
+			
+			<!-- ADMINISTRATEUR SANS PORTEE (= service) sans restriction -->
+			<profil nom="ADMINISTRATEUR">
+			</profil>
+			
+			<!-- ADMINISTRATEUR de portée nationale 
+			AVEC restriction FRANCE-->
+			<profil nom="ADMINISTRATEUR">
+				<portee>NATIONALE</portee>
+				<restriction>FRANCE</restriction>
+			</profil>
+			
+			<!-- DEVELOPPEUR de portée nationale avec restriction FRANCE -->
+			<profil nom="DEVELOPPEUR">
+				<portee>NATIONALE</portee>
+				<restriction>FRANCE</restriction>
+			</profil>
+			
+			<!-- UTILISATEUR de portée DIRA avec restriction DIR ATLANTIQUE -->
+			<profil nom="UTILISATEUR">
+				<portee>DIRA</portee>
+				<restriction>DIR ATLANTIQUE</restriction>
+			</profil>
+		</habilitation>
+		
+		<!-- ======================== -->
+		<!-- UTILISATEUR admin, admin -->
+		<!-- ======================== -->
+		<habilitation mel="admin@developpement-durable.gouv.fr">
+			<profil nom="ADMINISTRATEUR">
+			</profil>
+		</habilitation>
+		
+	</habilitations>
+	
+</annuaire>
+

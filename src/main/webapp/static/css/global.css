@@ -1,0 +1,233 @@
+/* ==============================================
+   FEUILLE DE STYLES DES GABARITS HTML/CSS
+   ============================================== */
+   
+/* Charset de la feuille de style. **************/
+@CHARSET "UTF-8";
+
+
+/* RESET DE TOUTES LES MARGES. *****************/
+html, body {
+	
+	/* Marges extérieures remises à zéro. */
+ 	margin: 0;
+ 	
+ 	/* Marges intérieures remises à zéro. */
+ 	padding: 0;
+ }
+
+/* --- STYLES DE BASE POUR LE TEXTE ET LES PRINCIPAUX ELEMENTS --- */
+
+/* PAGE HTML dans son ensemble. *******************/
+/*Ce "font-size: 100%" est normalement inutile. On l'utilise uniquement
+pour éviter un bug de redimensionnement du texte dans Internet Explorer.*/
+html {
+	/* Taille de la fonte réinitialisée à 100%. */
+	font-size: 100%;
+}
+
+/*CORPS (BODY) de la page. **********************/
+body {
+	
+	/* Marges externes aux objets à zéro. */
+	margin: 0;
+	
+	/* Par défaut, les navigateurs ont un padding (ou, pour certains, un
+	margin) de 6px pour l'élément BODY. C'est ce qui évite que le texte
+	ne soit complètement collé aux bords de la zone de visualisation du
+	navigateur lorsqu'on affiche une page «brute», sans mise en forme.
+	Mais ce retrait de 6px est un peu faiblard: on le renforce donc.
+	Notez bien que les feuilles de styles des gabarits pourront augmenter
+	ce retrait, ou bien l'annuler. */
+	padding: 10px 20px;
+	
+	/* Fontes disponibles dans le corps (body) de la page xhtml. */
+	font-family: Georgia, Verdana, Arial, "Trebuchet MS", 
+	"Bitstream Vera Sans", "Lucida Grande", sans-serif, serif;
+	
+	/* 120% de la taille normale de la fonte.*/
+	/* font-size: 1.2em; */
+	/* 80% de la taille normale de la fonte.*/
+	font-size: 0.8em;
+	
+	/* Texte en style normal (pas italiques, oblique, ...). */
+	font-style: normal;
+	
+	/* Texte en graisse normale (bold pour gras). */
+	font-weight: normal;
+	
+	/* Couleur du texte en noir par défaut. */
+	color: black;
+	
+		
+	line-height: 1.25; /* -> 5 */
+
+	background-color: white;
+}
+
+/* TITRE DE NIVEAU 1. *********************/
+h1
+{
+   text-align: center; /* Pour centrer les titres de niveau1 */
+   font-family: "Arial Black", Arial, Verdana, serif; 
+   border:2px solid #8F99EF;
+   background-color: #EFFBEF;
+}
+
+/* TABLEAUX. ******************************/
+table caption, div table caption {
+ border-width:1px; 
+ border-spacing : 2px;
+ border-style:outset; 
+ border-color:black;
+ border-collapse:separate;
+ background-color:white;
+ margin: auto;
+ width:50%;
+ border-spacing: 10px 5px;
+ background-color: #DDEEFF;
+ font-size: 0.8em;
+ }
+ table, div table {
+ border-width:3px; 
+ border-spacing : 2px;
+ border-style:outset; 
+ border-color:black;
+ border-collapse:collapse;
+ background-color:white;
+ margin: auto;
+ width:50%;
+ border-spacing: 10px 5px;
+ }
+ th, div th, div table th { 
+ border-width:1px;
+ border-spacing : 2px;
+ border-style:solid; 
+ border-color:black;
+ border-collapse:collapse;
+ background-color:white;
+ margin: auto;
+ width:50%;
+ border-spacing: 10px 5px;
+ color: black;
+ background-color: #FFCC66;
+ }
+td, div td, div table td { 
+ border-width:1px;
+ border-spacing : 2px;
+ border-style:solid; 
+ border-color:black;
+ border-collapse:collapse;
+ background-color:white;
+ margin: auto;
+ width:50%;
+ border-spacing: 10px 5px;
+ }
+table tfoot, div tfoot, div table tfoot {
+	background-color: #FFCC66;
+    color: #996600;
+}
+
+div.afficherChampignon
+{
+	
+	color: green;
+		
+}
+
+/* IMAGES A CENTRER. *******************/
+/* Concerne les images (img) contenues dans des paragraphes (p) inclus dans une div de classe 'blockimageacentrer' */
+div.blockimageacentrer p img
+{
+   /* Force l'affichage de l'image en mode block (et pas inline).*/
+   display: block;
+   
+   /* Centre l'image. */
+   margin: 0 auto;
+   
+   /* Précise la largeur et la hauteur natives de l'image. */
+   width:640;
+   height:480;
+   
+   /* Fond de l'image blanc. */
+   background-color: white;
+}
+
+
+/* LEGENDE DE L'IMAGE A CENTRER. ***************/
+/* Concerne les paragraphes(p) de classe 'legendeacentrer' contenus dans une div de classe 'blockimageacentre' */
+div.blockimageacentrer p.legendeacentrer
+{
+	/* 75% de la taille normale de la fonte.*/
+	font-size: 0.75em;
+	
+	/* Centrage de la légende. */
+	text-align: center;
+	
+	/* Texte de la légende de couleur bleue. */
+	color:blue;
+	
+	/* Texte de la légende en italiques. */
+	font-style:italic;
+	
+	/* Texte de la légende en fonte grasse. */
+	font-weight: bold;
+	
+	/* Texte de la légende sur fond jaune. */
+	background-color: yellow;
+}
+
+/* CLASSE SIGNATURE*****************/
+.signature
+{
+   text-align: right; /* Pour aligner à droite ma signature */
+   font-family: "Comic Sans MS", Georgia, "Times New Roman", serif;
+   font-size: 80%;
+}
+
+/* CLASSE titreapplication*****************/
+.titreapplication {
+    background-color: #EFFBEF;
+    font-weight:bold;
+    font-size:18px;
+    text-align:center;
+    /*padding-left:10px;*/
+    padding-top:10px;
+    padding-bottom:10px;
+    border:2px solid #8F99EF;
+}
+
+/* CLASSE affichageLocalisationPR ***********/
+.affichageLocalisationPR {
+	
+
+}
+
+div.affichageLocalisationPR table {
+	
+ border-width:3px; 
+ border-spacing : 2px;
+ border-style:outset; 
+ border-color:black;
+ border-collapse:separate;
+ background-color:black;
+ width:50%;
+}
+
+div.affichageLocalisationPR th {
+	
+ border-width:1px;
+ border-style:solid; 
+ border-color:black;
+ border-collapse:collapse
+ width:50%;
+}
+
+div.affichageLocalisationPR td {
+	
+ border-width:1px;
+ border-style:solid; 
+ border-color:black;
+ border-collapse:collapse
+ width:50%;
+}

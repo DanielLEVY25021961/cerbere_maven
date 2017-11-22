@@ -1,0 +1,213 @@
+body {
+    background-color:white;
+    color:black;
+    margin:0px;
+    width:100%;
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-size:65%;
+}
+
+div {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0;
+}
+
+input.text {
+	width: 400px;
+}
+
+h2 {
+	padding-left: 2px;
+	padding-right: 2px;
+	font-size: 11pt;
+    font-weight: bold;
+	color: #ffffff;
+	background-color: #418513;
+}
+
+h3 {
+	padding-left: 2px;
+	padding-right: 2px;
+	font-size: 11pt;
+    font-weight: bold;
+}
+
+.clear {
+	clear: both;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+#haut {
+	height: 1px;
+}
+
+#gauche {
+    width: 140px;
+    margin-top: 0px;
+    padding-top: 125px;
+    background: url(?__cerbere__=img/logo.gif&) no-repeat top right;
+    text-align: right;
+    float: left;
+}
+
+#gauche h1 {
+	font-size: 0;
+	width: 100%;
+}
+
+#gauche h2 {
+	text-align: center;
+    color: white;
+	background-color: #AFAFAF;
+}
+
+#gauche ul {
+	padding: 0;
+	margin: 0;
+	border-right: solid 1px #418513;
+	list-style-type: none;
+	width: 100%;
+}
+
+#gauche ul li {
+	font-size: 8pt;
+	text-align: right;
+	vertical-align: middle;
+	background: url(?__cerbere__=img/puce_droite_menu.gif) no-repeat center right;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#contenu {
+	margin-left: 160px;
+	width: 610px;
+}
+
+ul.boutons {
+	text-align: right;
+	list-style-type: none;
+}
+
+ul.boutons li {
+	display: inline;
+	text-align: center;
+	padding: 5px;
+}
+
+ul#lang {
+	padding-right: 15px;
+	text-align: right;
+	list-style-type: none;
+}
+
+ul#lang li {
+	display: inline;
+	text-align: center;
+	padding: 5px;
+}
+
+#bas {
+	margin-left: 160px;
+	border-top: #418513 14px solid;
+	padding: 2px;
+	width: 606px;
+}
+
+#ministere {
+	text-align: right;
+}
+
+#ministere p {
+	margin: 0;
+	padding: 0;
+}
+
+#version {
+	float: left;
+}
+
+#version p {
+	margin: 0;
+	padding: 0;
+}
+
+#version a {
+	padding-left: 20px;
+	background: url(?__cerbere__=img/mail.gif) no-repeat center left;
+}
+
+.messages {
+	font-style: italic;
+}
+
+.small {
+	font-size: 8pt;
+}
+
+.hidden {
+	visibility: hidden;
+	padding: 0;
+	margin: 0;
+	font-size: 0px;
+}
+
+ul.messages {
+	padding-top: 0px;
+	margin-top: 0px;
+	list-style-type: none;
+}
+
+.alerte {
+    font-weight: bold;
+    color: red;
+    background-color: white;
+}
+
+.note {
+    font-weight:bold;
+}
+
+h3.tab {
+	padding: 0;
+	margin: 0;
+	color: blue;
+	background: white;
+	font-size: 10pt;
+	text-align: left;
+	text-decoration: none
+}
+
+h3.tab span {
+	padding-right: 12px;
+	color: white;
+	background: #418513 url(?__cerbere__=img/coin_blanc.gif) no-repeat top right;
+}
+
+div.tab {
+	border: #418513 2px solid;
+}
+
+div.tab p {
+	margin: 4px;
+	padding: 0;
+	vertical-align: middle;
+}
+
+div.tab label {
+	width: 170px;
+	text-align: right;
+	float: left;
+	display: inline;
+}
+

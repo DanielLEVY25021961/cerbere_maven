@@ -1,0 +1,174 @@
+
+<!-- ======================================================= -->
+<!-- 					DTD XHTML							 -->
+<!-- ======================================================= -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<!--===============================================================-->
+<!-- DEBUT DU FICHIER XHTML 									   -->
+<!--===============================================================--> 
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+
+						<!-- ================= -->
+						<!-- 	    HEAD       -->
+						<!-- ================= -->
+
+	<head>
+				
+		<!--============================================================ -->
+		<!--				Balises Méta								 -->
+		<!--============================================================ -->
+		<meta name="author" content="Daniel Lévy" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta name="keywords" lang="fr" content="tutoriel web" />
+		
+
+		<!--==============================================================-->
+		<!--                   DECLARATION DE LA css                      -->
+		<!--==============================================================-->		
+		<!-- En HTML, pas de / initial = RELATIF à la présente page. 	  -->
+		<!-- En HTML, / initial veut dire ABSOLU sous le SERVEUR		  -->		
+		<link rel="stylesheet" type="text/css" media="screen"
+									 href="static/css/nav_fixe.css" />
+
+
+		<!--==============================================================-->
+		<!--                   Icone à côté du titre                      -->
+		<!--==============================================================-->				
+		<!-- En HTML, pas de / initial = RELATIF à la présente page. 	  -->
+		<!-- En HTML, / initial veut dire ABSOLU sous le SERVEUR		  -->		
+		<link rel="icon" type="image/png" 
+				href="image/image_png/drapeau_france.png" />
+		
+		
+		<!--======================================	-->
+		<!--		TITRE DE LA HTML	 			-->
+		<!--====================================== 	-->
+		<title>:: pointentree.html sous WebContent::</title>
+			
+	</head>
+
+						<!-- ================= -->
+						<!-- 	    BODY       -->
+						<!-- ================= -->
+	
+	<body>
+	
+		<h1>pointentree.html sous WebContent</h1>
+		
+		<div class="contenu">
+		
+			<p>
+				Cette page nommée <b>pointentree.html</b> est écrite en 
+				XHTML 1.0 Strict avec un encodage UTF-8. 
+			</p>
+			
+			<p>
+				Elle est située  
+				directement sous la racine (<i>contexte</i>) du serveur 
+				<b><i>('WebContent' sous ECLIPSE)</i></b>, donc 
+				à la position 'http://localhost:8080/cerbere/pointentree.html' 
+				si le <b><i>serveur</i></b> est 'localhost:8080' 
+				et le <b><i>contexte</i></b> 'cerbere'.
+			</p>
+			
+			<p>
+				Cette page est servie même en tapant dans 
+				l'URL du navigateur 
+				'http://localhost:8080/cerbere/pointentree.html' 
+				puisqu'elle est directement sous le contexte 
+				(WebContent de Eclipse).
+			</p>
+			
+			<p>
+				<b>ATTENTION : </b>
+			</p>
+			
+			<p>
+				<b>Cette page ne peut être directement 
+				servie en tapant 
+				'http://localhost:8080/cerbere/pointentree.html' 
+				que si l'utilisateur s'est déjà loggé sous Cerbere.</b>
+			</p>
+			
+			<p>
+				En effet, le filtre Cerbere dans le web.xml 
+				intercepte TOUTES les requêtes, sauf les URL "ouvertes" :
+			</p>
+			
+			<div>
+				<pre>
+				&lt;filter-mapping&gt;
+    					&lt;filter-name&gt;
+    						&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    					&lt;/filter-name&gt;
+    				&lt;/filter-mapping&gt;
+    			</pre>
+   			</div>  
+   			
+   			<p>Et "contexte/pointentree.html" ne 
+   			fait PAS partie des URL ouvertes.</p>
+		
+		</div>
+
+		
+		<!-- =================== -->
+		<!-- LIENS DE NAVIGATION -->
+		<!-- =================== -->
+		<div class="navigation">
+		
+			<!-- Barre horizontale. -->
+			<hr />
+			
+			<div>
+				
+				<ul>
+				
+					<li>
+					
+						<!-- ============================= -->
+						<!-- LIEN VERS contexte/accueil.do -->
+						<!-- Dans une page HTML, ressource -->
+						<!-- SANS "/" avant fabrique une   -->
+						<!-- URL RELATIVE (par rapport 	   -->
+						<!-- à la présente page).	   	   -->
+						<!-- ============================= -->				
+						<a href="accueil.do">
+							vers l'accueil = 
+							/WEB-INF/jsp/application/accueil.jsp
+							via l'action accueil.do 
+							(http://localhost:8080/cerbere/accueil.do)
+						</a>
+						
+					</li>
+					
+					<li>
+					
+						<!-- ============================= -->
+						<!-- LIEN VERS contexte/pointentree.jsp -->
+						<!-- Dans une page HTML, ressource -->
+						<!-- SANS "/" avant fabrique une   -->
+						<!-- URL RELATIVE (par rapport 	   -->
+						<!-- à la présente page).	   	   -->
+						<!-- ============================= -->				
+						<a href="pointentree.jsp">
+							vers pointentree.jsp sous le contexte
+							(http://localhost:8080/cerbere/pointentree.jsp)
+						</a>
+						
+					</li>
+				
+				
+				</ul>
+				
+			
+			</div>
+			
+		</div>
+		
+	</body>
+	
+</html>
