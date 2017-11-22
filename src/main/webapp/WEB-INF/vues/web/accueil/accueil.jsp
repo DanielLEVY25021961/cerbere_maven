@@ -1,13 +1,10 @@
 <%--NE PAS METTRE DE DECLARATION XML ici (BUG AVEC IE6) --%>
 <%-- ?xml version="1.0" encoding="UTF-8" ? --%>
 
-<%-- JSP D'ACCUEIL DE L'APPLICATION.  --%>
+<!-- DOCTYPE (DTD pour HTML5) -->
+<!DOCTYPE html>
 
-<%--===============================================================--%>
-<%-- DECLARATION DE LA DTD --%>
-<%--===============================================================--%>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%-- JSP D'ACCUEIL DE L'APPLICATION.  --%>
 
 <%--===============================================================--%>
 <%-- IMPORT DES TAGLIBS DE STRUTS et JSTL --%>
@@ -30,7 +27,7 @@
 <%-- de la présente page est en UTF-8. 								--%>
 <%-- isErrorPage="false" signifie que la présente jsp n'est pas une --%>
 <%-- page d'erreur.												    --%>
-<%-- 'errorPage="/WEB-INF/jsp/commun/erreur.jsp"'	 				--%>
+<%-- 'errorPage="/WEB-INF/vues/web/commun/erreur.jsp"'	 			--%>
 <%-- localise la page d'erreurs ET GENERE UN OBJET "exception".    	--%>
 <%-- session="true" signifie que la présente jsp aura accès aux    	--%>
 <%-- informations de Session.								    	--%>
@@ -43,7 +40,7 @@
 		contentType="text/html; charset=UTF-8"
     		pageEncoding="UTF-8"
     			isErrorPage="false" 
-    				errorPage="/WEB-INF/jsp/commun/erreur.jsp" 
+    				errorPage="/WEB-INF/vues/web/commun/erreur.jsp" 
     					session="true" 
     						isThreadSafe="true"
     							info="Page d'accueil" %>
@@ -58,7 +55,7 @@
 <%--===============================================================--%>
 <%-- DEBUT DU FICHIER XHTML --%>
 <%--===============================================================--%>  
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 
 
 							<%-- ================= --%>

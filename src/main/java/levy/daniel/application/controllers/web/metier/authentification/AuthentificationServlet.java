@@ -239,7 +239,7 @@ public class AuthentificationServlet extends HttpServlet {
 				
 				requestDispatcherAccueil 
 			    = pRequest.getRequestDispatcher(
-			    		"/WEB-INF/jsp/application/accueil.jsp");
+			    		"/WEB-INF/vues/web/accueil/accueil.jsp");
 			    	    
 			    if (LOG.isInfoEnabled()) {
 			    	LOG.info("Servlet AuthentificationServlet - doGet() : " 
@@ -297,7 +297,7 @@ public class AuthentificationServlet extends HttpServlet {
 				
 				requestDispatcherAccueil 
 			    = pRequest.getRequestDispatcher(
-			    		"/WEB-INF/jsp/application/accueil.jsp");
+			    		"/WEB-INF/vues/web/accueil/accueil.jsp");
 			    	    
 			    if (LOG.isInfoEnabled()) {
 			    	LOG.info("Servlet AuthentificationServlet - doGet() : " 

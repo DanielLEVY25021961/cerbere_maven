@@ -1,6 +1,9 @@
 <%--NE PAS METTRE DE DECLARATION XML ici (BUG AVEC IE6) --%>
 <%-- ?xml version="1.0" encoding="UTF-8" ? --%>
 
+<!-- DOCTYPE (DTD pour HTML5) -->
+<!DOCTYPE html>
+
 
 <%-- JSP AFFICHANT LA PAGE DE RECHERCHE D'UN UTILISATEUR.  --%>
 
@@ -15,7 +18,7 @@
 <%-- de la présente page est en UTF-8. 								--%>
 <%-- isErrorPage="false" signifie que la présente jsp n'est pas une --%>
 <%-- page d'erreur.												    --%>
-<%-- 'errorPage="/WEB-INF/jsp/commun/erreur.jsp"'	 				--%>
+<%-- 'errorPage="/WEB-INF/vues/web/commun/erreur.jsp"'	 			--%>
 <%-- localise la page d'erreurs ET GENERE UN OBJET "exception".    	--%>
 <%-- session="true" signifie que la présente jsp aura accès aux    	--%>
 <%-- informations de Session.								    	--%>
@@ -28,7 +31,7 @@
 		contentType="text/html; charset=UTF-8"
     		pageEncoding="UTF-8"
     			isErrorPage="false" 
-    				errorPage="/WEB-INF/jsp/commun/erreur.jsp" 
+    				errorPage="/WEB-INF/vues/web/commun/erreur.jsp" 
     					session="true" 
     						isThreadSafe="true"
     							info="Page de recherche d'un utilisateur" %>
@@ -50,16 +53,9 @@
 
 
 <%--===============================================================--%>
-<%-- 					DECLARATION DE LA DTD 					   --%>
-<%--===============================================================--%>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-
-
-<%--===============================================================--%>
 <%-- DEBUT DU FICHIER XHTML --%>
 <%--===============================================================--%>  
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 
 
 									<%-- ================= --%>
@@ -149,7 +145,7 @@
 				
 					<input type="hidden" name="action" value="10" />
 					
-					<table border="0">
+					<table border="1">
 						<tr>
 							<td>Service</td>
 							<td><input type="text" name="service" value="${param.service}" /></td>

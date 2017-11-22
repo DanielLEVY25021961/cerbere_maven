@@ -199,7 +199,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		   <artifactId>cerbere-bouchon</artifactId>
 		   <version>4.5.0</version>
 		   <scope>system</scope>
-		   <systemPath>C:/Users/daniel.levy/.m2/repository/fr/gouv/e2/cerbere/cerbere-bouchon/4.5.0/cerbere-bouchon-4.5.0.jar</systemPath>
+		   <systemPath>${env.M2_HOME}/repository/fr/gouv/e2/cerbere/cerbere-bouchon/4.5.0/cerbere-bouchon-4.5.0.jar</systemPath>
 		</dependency>	
 	
 

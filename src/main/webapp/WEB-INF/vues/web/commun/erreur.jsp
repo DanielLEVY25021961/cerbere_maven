@@ -18,7 +18,7 @@
 <%-- de la présente page est en UTF-8. 								--%>
 <%-- isErrorPage="true" signifie que la présente jsp est une 		--%>
 <%-- page d'erreur.												    --%>
-<%-- 'errorPage="/WEB-INF/jsp/commun/erreur.jsp"'	 				--%>
+<%-- 'errorPage="/WEB-INF/vues/web/commun/erreur.jsp"'	 			--%>
 <%-- localise la page d'erreurs ET GENERE UN OBJET "exception".    	--%>
 <%-- session="true" signifie que la présente jsp aura accès aux    	--%>
 <%-- informations de Session.								    	--%>

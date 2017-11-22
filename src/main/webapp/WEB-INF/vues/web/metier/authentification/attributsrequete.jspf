@@ -2,7 +2,7 @@
 INFORMATIONS SUR LES ATTRIBUTS DE LA REQUETE --%>
 
 <%-- A INCLURE DANS LES JSP MERE avec la DIRECTIVE : 
-@ include file="/WEB-INF/vues/attributsrequete.jspf"  --%>
+@ include file="/WEB-INF/vues/web/metier/authentification/attributsrequete.jspf"  --%>
 
 <%-- L'inclusion est effectuée à la compilation de la JSP MERE. --%>
 <%-- Cela équivaut à copier-coller le code de la PRESENTE JSP FILLE
@@ -29,7 +29,7 @@ Il est RECOMMANDE DE DONNER L'EXTENSION jspf pour JSP Fragment--%>
 <%-- de la présente page est en UTF-8. 								--%>
 <%-- isErrorPage="false" signifie que la présente jsp n'est pas une --%>
 <%-- page d'erreur.												    --%>
-<%-- 'errorPage="/WEB-INF/jsp/commun/erreur.jsp"'	 				--%>
+<%-- 'errorPage="/WEB-INF/vues/web/commun/erreur.jsp"'	 			--%>
 <%-- localise la page d'erreurs ET GENERE UN OBJET "exception".    	--%>
 <%-- session="true" signifie que la présente jsp aura accès aux    	--%>
 <%-- informations de Session.								    	--%>
