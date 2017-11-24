@@ -194,14 +194,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<!-- dépendances pour CERBERE-BOUCHON 		-->
 		<!-- ====================================== -->
 		<!-- https://forge.din.developpement-durable.gouv.fr/nexus/repository/maven-public -->
-		<!-- INSERE le JAR cerbere-bouchon-4.5.0.jar depuis le dépôt local ${env.M2_HOME}/repository/ -->
+		<!-- Cette bibliothèque a été déposée dans le repository local en : -->
+		<!-- 1 - se positionnant sur le jar cerbere-bouchon-4.5.0.jar  -->
+		<!-- 2 - executant la commande Maven : -->
+		<!-- mvn install:install-file -Dfile=cerbere-bouchon-4.5.0.jar -DgroupId=fr.gouv.e2.cerbere -DartifactId=cerbere-bouchon -Dversion=4.5.0 -Dpackaging=jar -->
 		<dependency>
 		   <groupId>fr.gouv.e2.cerbere</groupId>
 		   <artifactId>cerbere-bouchon</artifactId>
 		   <version>4.5.0</version>
-<!-- 		   <scope>system</scope> -->
-<!-- 		   <systemPath>${env.M2_HOME}/repository/fr/gouv/e2/cerbere/cerbere-bouchon/4.5.0/cerbere-bouchon-4.5.0.jar</systemPath> -->
-			<scope>compile</scope>
+		   <scope>compile</scope>
 		</dependency>	
 	
 
