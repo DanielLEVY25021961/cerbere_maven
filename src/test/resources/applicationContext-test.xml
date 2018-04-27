@@ -113,6 +113,12 @@
         <!-- plusieurs DataSources.										    -->
 <!--         <property name="dataSource" ref="dataSource2" /> -->
 <!--         <property name="dataSource" ref="dataSource3" /> -->
+
+        <!-- Fait le lien avec le persistence unit défini dans persistence-test.xml -->
+        <property name="persistenceUnitName" value="persistence_unit_base-cerbere_maven" />
+        
+        <!-- Localisation du fichier paramétrant l'ORM (classpath:META-INF/persistence-test.xml) -->
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence-test.xml"/>
         
     </bean>
 
@@ -175,6 +181,10 @@
     <!-- ============================================================== -->
     <!--                                HSQLDB                          -->
     <!-- ============================================================== -->
+    <!-- en mode FILE -->
+    <!--        <property name="url" value="jdbc:hsqldb:file:D:/Donnees/eclipse/eclipseworkspace_neon/cerbere_maven/data/base-cerbere_maven" /> -->
+    <!-- en mode MEMORY -->
+	<!-- 	   <property name="url" value="jdbc:hsqldb:mem:base-cerbere_maven" /> -->    
 <!--     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
 <!--        <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver" /> -->
 <!--        <property name="url" value="jdbc:hsqldb:file:D:/Donnees/eclipse/eclipseworkspace_neon/cerbere_maven/data/base-cerbere_maven" /> -->
@@ -200,7 +210,7 @@
 	<!-- Le sous-contexte /jdbc relatif au contexte de nommage racine	-->
 	<!-- précise qu'il s'agit d'une ressource jdbc.						-->
 	<!-- Le nom JNDI suit par convention le sous-contexte /jdbc		    -->
-	<!-- (DataSource = jdbc/dsAppliTutoWebSpringPouiller). 				--> 
+	<!-- (DataSource = jdbc/ds_cerbere-maven). 							--> 
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
     	<property name="jndiName" value="java:comp/env/jdbc/ds_cerbere-maven" />
     </bean>
